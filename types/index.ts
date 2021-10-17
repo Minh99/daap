@@ -1,74 +1,13 @@
 export enum CHAINS {
-  ARWEAVE = 'arweave',
-  AVALANCHE = 'avalanche',
-  CELO = 'celo',
-  CERAMIC = 'ceramic',
-  NEAR = 'near',
-  POLYGON = 'polygon',
-  POLKADOT = 'polkadot',
-  SECRET = 'secret',
   SOLANA = 'solana',
-  TEZOS = 'tezos',
-  THE_GRAPH = 'the_graph',
 }
 
 // Protocol's Enum
-export type PROTOCOLS =
-  | POLYGON_PROTOCOLS
-  | SOLANA_PROTOCOLS
-  | POLKADOT_PROTOCOLS
-  | AVALANCHE_PROTOCOLS
-  | SECRET_PROTOCOLS
-  | NEAR_PROTOCOLS
-  | CELO_PROTOCOLS
-  | TEZOS_PROTOCOLS
-  | CERAMIC_PROTOCOLS
-  | THE_GRAPH_PROTOCOLS
-  | ARWEAVE_PROTOCOLS;
-
-export enum THE_GRAPH_PROTOCOLS {
-  GRAPHQL = 'GRAPHQL',
-}
-
-export enum AVALANCHE_PROTOCOLS {
-  RPC = 'RPC',
-}
-
-export enum CELO_PROTOCOLS {
-  RPC = 'RPC',
-}
-
-export enum SECRET_PROTOCOLS {
-  RPC = 'RPC',
-  LCD = 'LCD',
-}
-
-export enum NEAR_PROTOCOLS {
-  RPC = 'RPC',
-}
-
-export enum TEZOS_PROTOCOLS {
-  RPC = 'RPC',
-}
-
-export enum POLYGON_PROTOCOLS {
-  RPC = 'RPC',
-  JSON_RPC = 'JSON_RPC',
-  WS = 'WS',
-}
-
-export enum POLKADOT_PROTOCOLS {
-  RPC = 'RPC',
-  WS = 'WS',
-}
+export type PROTOCOLS = SOLANA_PROTOCOLS;
 
 export enum SOLANA_PROTOCOLS {
   RPC = 'RPC',
   WS = 'WS',
-}
-
-export enum ARWEAVE_PROTOCOLS {
-  RPC = 'RPC',
 }
 
 // BlockChain Providers -----------------------
@@ -81,41 +20,6 @@ export enum CHAIN_PROVIDERS {
 }
 
 // NETWORKS ----------------------
-export enum AVALANCHE_NETWORKS {
-  MAINNET = 'MAINNET',
-  FUJI = 'FUJI',
-  DATAHUB = 'datahub',
-}
-
-export enum CELO_NETWORKS {
-  MAINNET = 'MAINNET',
-  ALFAJORES = 'alfajores',
-}
-
-export enum SECRET_NETWORKS {
-  MAINNET = 'MAINNET',
-  TESTNET = 'HOLODECK-2',
-}
-
-export enum NEAR_NETWORKS {
-  MAINNET = 'MAINNET',
-  TESTNET = 'TESTNET',
-}
-
-export enum TEZOS_NETWORKS {
-  MAINNET = 'MAINNET',
-  TESTNET = 'TESTNET',
-}
-
-export enum POLKADOT_NETWORKS {
-  WESTEND = 'WESTEND',
-  MAINNET = 'MAINNET',
-}
-
-export enum POLYGON_NETWORKS {
-  MAINNET = 'MAINNET',
-  TESTNET = 'TESTNET',
-}
 
 export enum SOLANA_NETWORKS {
   MAINNET = 'MAINNET',
@@ -124,38 +28,9 @@ export enum SOLANA_NETWORKS {
   LOCALNET = 'localnet',
 }
 
-export enum CERAMIC_NETWORKS {
-  TESTNET = 'TESTNET',
-}
-
-export enum CERAMIC_PROTOCOLS {
-  HTTP = 'HTTP',
-}
-
-export enum THE_GRAPH_NETWORKS {
-  LOCALNET = 'localnet',
-  STUDIO = 'studio',
-}
-
-export enum ARWEAVE_NETWORKS {
-  MAINNET = 'mainnet',
-}
-
 // -----------------------------
 
-export type NETWORKS =
-  | POLYGON_NETWORKS
-  | AVALANCHE_NETWORKS
-  | SOLANA_NETWORKS
-  | POLKADOT_NETWORKS
-  | NEAR_NETWORKS
-  | SECRET_NETWORKS
-  | CELO_NETWORKS
-  | TEZOS_NETWORKS
-  | THE_GRAPH_NETWORKS
-  | CERAMIC_NETWORKS
-  | TEZOS_NETWORKS
-  | ARWEAVE_NETWORKS;
+export type NETWORKS = SOLANA_NETWORKS;
 
 // ---------------------------------------------------
 export type ChainType = {

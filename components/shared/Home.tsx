@@ -17,48 +17,18 @@ const Home = () => {
     <Wrapper>
       <Container span={16} offset={4}>
         <Title>
-          Learn the Web 3 stack{' '}
+          DAU GIA BLOCK-CHAIN{' '}
           <Brand>
             by{' '}
-            <a
-              href="https://learn.figment.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Figment
+            <a href="" target="_blank" rel="noreferrer">
+              Minh - Vuong - Dang
             </a>
           </Brand>
         </Title>
         <Row>
-          <Col span={8}>
-            <ChainRow title={'Data Indexing'}>
-              <Protocol chain={CHAINS.THE_GRAPH} />
-            </ChainRow>
-          </Col>
-
-          <Col span={8}>
-            <ChainRow title={'Identity'}>
-              <Protocol chain={CHAINS.CERAMIC} />
-            </ChainRow>
-          </Col>
-
-          <Col span={8}>
-            <ChainRow title={'Storage'}>
-              <Protocol chain={CHAINS.ARWEAVE} />
-            </ChainRow>
-          </Col>
-        </Row>
-        <Row>
           <Col span={24}>
-            <ChainRow title={'Chains'}>
+            <ChainRow title={'Room'}>
               <Protocol chain={CHAINS.SOLANA} />
-              <Protocol chain={CHAINS.AVALANCHE} />
-              <Protocol chain={CHAINS.POLYGON} />
-              <Protocol chain={CHAINS.NEAR} />
-              <Protocol chain={CHAINS.POLKADOT} />
-              <Protocol chain={CHAINS.TEZOS} />
-              <Protocol chain={CHAINS.SECRET} />
-              <Protocol chain={CHAINS.CELO} />
             </ChainRow>
           </Col>
         </Row>
