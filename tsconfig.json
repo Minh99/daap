@@ -15,16 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@near/*": ["components/protocols/near/*"],
-      "@polkadot/*": ["components/protocols/polkadot/*"],
       "@solana/*": ["components/protocols/solana/*"],
-      "@celo/*": ["components/protocols/celo/*"],
-      "@tezos/*": ["components/protocols/tezos/*"],
-      "@avalanche/*": ["components/protocols/avalanche/*"],
-      "@secret/*": ["components/protocols/secret/*"],
-      "@polygon/*": ["components/protocols/polygon/*"],
-      "@ceramic/*": ["components/protocols/ceramic/*"],
-      "@the-graph/*": ["components/protocols/the_graph/*"],
       "@funnel/*": ["utils/*"]
     }
   },

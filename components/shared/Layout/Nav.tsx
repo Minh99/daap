@@ -32,24 +32,8 @@ const Nav = () => {
         <Link href="/">
           <ArrowLeft style={{cursor: 'pointer'}} color={secondaryColor} />
         </Link>
-        <Image src={logoSVG} alt="Figment Learn" height={47} width={100} />
-        <ChainTitle
-          secondary_color={secondaryColor}
-        >{`${chainLabel} Pathway`}</ChainTitle>
+        <ChainTitle secondary_color={secondaryColor}>{`HOME`}</ChainTitle>
       </Left>
-
-      <a
-        href="https://discord.com/invite/fszyM7K"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Discord>
-          <Row align="middle">
-            <div>Need help? Find us on</div>
-            <Image src={discordSVG} alt="Discord" height={22} width={100} />
-          </Row>
-        </Discord>
-      </a>
     </StyledNav>
   );
 };

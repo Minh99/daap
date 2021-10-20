@@ -39,44 +39,11 @@ export default function Chain({
   };
 
   const DynChain = (() => {
-    if (chainId === CHAINS.AVALANCHE)
-      return dynamic(
-        () => import('../components/protocols/avalanche'),
-        dynOptions,
-      );
-    if (chainId === CHAINS.CELO)
-      return dynamic(() => import('../components/protocols/celo'), dynOptions);
-    if (chainId === CHAINS.NEAR)
-      return dynamic(() => import('../components/protocols/near'), dynOptions);
-    if (chainId === CHAINS.POLKADOT)
-      return dynamic(
-        () => import('../components/protocols/polkadot'),
-        dynOptions,
-      );
-    if (chainId === CHAINS.POLYGON)
-      return dynamic(
-        () => import('../components/protocols/polygon'),
-        dynOptions,
-      );
-    if (chainId === CHAINS.SECRET)
-      return dynamic(
-        () => import('../components/protocols/secret'),
-        dynOptions,
-      );
     if (chainId === CHAINS.SOLANA)
       return dynamic(
         () => import('../components/protocols/solana'),
         dynOptions,
       );
-    if (chainId === CHAINS.TEZOS)
-      return dynamic(() => import('../components/protocols/tezos'), dynOptions);
-    if (chainId === CHAINS.THE_GRAPH)
-      return dynamic(
-        () => import('../components/protocols/the_graph'),
-        dynOptions,
-      );
-    if (chainId === CHAINS.CERAMIC)
-      return dynamic(() => import('../components/protocols/ceramic'));
   })() as DynChainT;
 
   return (

@@ -8,6 +8,8 @@ import {CHAINS_CONFIG} from 'lib/constants';
 import {colors, getChainColors} from 'utils/colors';
 import {trackEvent} from 'utils/tracking-utils';
 import ProtocolLogo from 'components/icons';
+import {randomInt} from 'crypto';
+import {title} from 'process';
 
 const PROTOCOL_BOX_LENGTH = 100;
 const PROTOCOL_ICON_LENGTH = 30;
@@ -19,16 +21,22 @@ const Home = () => {
         <Title>
           DAU GIA BLOCK-CHAIN{' '}
           <Brand>
-            by{' '}
+            {' '}
             <a href="" target="_blank" rel="noreferrer">
-              Minh - Vuong - Dang
+              ( M-V-D )
             </a>
           </Brand>
         </Title>
         <Row>
           <Col span={24}>
             <ChainRow title={'Room'}>
-              <Protocol chain={CHAINS.SOLANA} />
+              <Protocol chain={CHAINS.SOLANA} title="Room 1" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 2" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 3" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 4" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 5" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 6" />
+              <Protocol chain={CHAINS.SOLANA} title="Room 7" />
             </ChainRow>
           </Col>
         </Row>
@@ -37,7 +45,7 @@ const Home = () => {
   );
 };
 
-const Protocol = ({chain}: {chain: CHAINS}) => {
+const Protocol = ({chain, title}: {chain: CHAINS; title: string}) => {
   const {id, active, label} = CHAINS_CONFIG[chain];
   const {primaryColor, secondaryColor} = getChainColors(chain as CHAINS);
 
@@ -60,7 +68,9 @@ const Protocol = ({chain}: {chain: CHAINS}) => {
         </ComingSoon>
       )}
       <ProtocolLogo chainId={chain} size={PROTOCOL_ICON_LENGTH} />
-      <Label>{label}</Label>
+      <Label>{title}</Label>
+
+      {/* <Label>{label}</Label> */}
     </ProtocolBox>
   );
 

@@ -114,7 +114,7 @@ const Nav = () => {
         onChange={toggleLocal}
         disabled={!isFirstStepForCurrentStepId(state)}
       >
-        <Option value={SOLANA_NETWORKS.DATAHUB}>Datahub</Option>
+        {/* <Option value={SOLANA_NETWORKS.DATAHUB}>Datahub</Option> */}
         <Option value={SOLANA_NETWORKS.DEVNET}>Devnet</Option>
         <Option value={SOLANA_NETWORKS.LOCALNET}>Localnet</Option>
       </Select>
