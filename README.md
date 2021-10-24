@@ -56,46 +56,32 @@ We hope you enjoy our Web 3 education dApps 🚀
 # deploy 
 💻 Set up the Solana CLI
 Install Rust and Solana CLI
-So far we've been using Solana's JS API to interact with the blockchain. In this chapter we're going to deploy a Solana program using another Solana developer tool: their Command Line Interface (CLI). We'll install it and use it through our Terminal.
-For simplicity, perform both of these installations inside the project root (/learn-web3-dapp/):
-Install the latest Rust stable :
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-Developers using macOS may want to use the following commands instead:
-curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
-source $HOME/.cargo/env
+- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+- source $HOME/.cargo/env
+
 Install Solana CLI v1.6.6 or later :
-sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+- sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+
 Set up Solana CLI
-We need to configure the Solana cluster, create an account, request an airdrop and check that everything is functioning properly.
-Set the CLI config URL to the devnet cluster:
-solana config set --url https://api.devnet.solana.com
-Next, we're going to generate a new keypair using the CLI. Run the following command in your Terminal :
-NOTE: Make sure you're running these commands from the /learn-web3-dapp/ directory, which is the root directory of the repository.
-mkdir solana-wallet
-solana-keygen new --outfile solana-wallet/keypair.json
+- solana config set --url https://api.devnet.solana.com
+
+- mkdir solana-wallet
+- solana-keygen new --outfile solana-wallet/keypair.json
+
 You will need SOL available in the account to deploy the program, so get an airdrop with:
-solana airdrop 1 $(solana-keygen pubkey solana-wallet/keypair.json)
-NOTE: In a Windows terminal, the $( ) syntax does not work, so just paste the public key you want to fund after the airdrop amount (for example: solana airdrop 1 C1qx2QUZq7EyLZao4U98fRb8HkT3X5fsGWUc25VyCRBn).
+
+- solana airdrop 1 $(solana-keygen pubkey solana-wallet/keypair.json)
+
 Verify that everything is ok:
-solana config get
-solana account $(solana-keygen pubkey solana-wallet/keypair.json)
+- solana config get
+- solana account $(solana-keygen pubkey solana-wallet/keypair.json)
+
 🧩 Deploy a Solana program
-The program we're going to deploy is an easy but pretty complete program. This program keeps track of the number of times an account has sent a greeting instruction to it.
-Building the program
-The first thing we're going to do is compile the Rust program to prepare it for the CLI. To do this we're going to use a custom script that's defined in package.json. Let's run the script and build the program by running the following command in the terminal (from the project root directory):
-This step can take a few minutes!
-yarn run solana:build:program
-When it's successful, you will see the instructions to execute the deploy command with the path to the compiled program named helloworld.so. While this would work, we want to specify the keypair we generated just for this purpose, so read on.
-To deploy this program:
-  $ solana program deploy /home/zu/project/figment/learn-web3-dapp/dist/solana/program/helloworld.so
-Done in 1.39s.
-The .so extension does not stand for Solana! It stands for "shared object". You can learn more about Solana Programs in the developer documentation.
-Deploying the program
-Now we're going to deploy the program to the devnet cluster. The CLI provides a simple interface for this, solana deploy:
-NOTE: Make sure you're running this command from the /learn-web3-dapp/ directory, which is the root directory of the repository (otherwise, you would need to change the paths to the keypair.json and the helloworld.so file).
-solana deploy -v --keypair solana-wallet/keypair.json dist/solana/program/helloworld.so
-The -v Verbose flag is optional, but it will show some related information like the RPC URL and path to the default signer keypair, as well as the expected Commitment level. When the process completes, the Program Id will be displayed :
+- yarn run solana:build:program
+- solana deploy -v --keypair solana-wallet/keypair.json dist/solana/program/helloworld.so
+
 On success, the CLI will print the programId of the deployed contract.
+
 RPC URL: https://api.devnet.solana.com
 Default Signer Path: solana-wallet/keypair.json
 Commitment: confirmed
