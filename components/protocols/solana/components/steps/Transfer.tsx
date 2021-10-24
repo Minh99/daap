@@ -50,6 +50,10 @@ const Transfer = () => {
     const keypair = Keypair.generate();
     const address = keypair.publicKey.toString();
     setRecipient(address);
+    console.log(address);
+    const secret2 = JSON.stringify(Array.from(keypair.secretKey));
+
+    console.log(secret2);
   };
 
   useEffect(() => {
@@ -74,6 +78,8 @@ const Transfer = () => {
       if (isNaN(lamports)) {
         throw new Error('invalid amount');
       }
+      console.log(secret);
+
       const response = await axios.post(`/api/solana/transfer`, {
         address,
         secret,
