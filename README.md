@@ -36,6 +36,12 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ```text
 git clone https://github.com/figment-networks/learn-web3-dapp.git
 cd learn-web3-dapp
+yarn add @solana/wallet-adapter-wallets \
+         @solana/wallet-adapter-base \
+         @solana/wallet-adapter-react \
+         @solana/wallet-adapter-react-ui \
+         @solana/web3.js \
+         react
 yarn
 ```
 
@@ -54,3 +60,36 @@ Feel free to also open an Issue or a Pull Request on the repo itself.
 We hope you enjoy our Web 3 education dApps 🚀
 
 -- ❤️ The Figment Learn Team
+
+# deploy
+
+computer Set up the Solana CLI Install Rust and Solana CLI
+
+- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+- source $HOME/.cargo/env
+  Install Solana CLI v1.6.6 or later :
+
+- sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+  Set up Solana CLI
+
+- solana config set --url https://api.devnet.solana.com
+
+- mkdir solana-wallet
+
+- solana-keygen new --outfile solana-wallet/keypair.json
+
+You will need SOL available in the account to deploy the program, so get an airdrop with:
+
+- solana airdrop 1 $(solana-keygen pubkey solana-wallet/keypair.json)
+  Verify that everything is ok:
+
+- solana config get
+- solana account $(solana-keygen pubkey solana-wallet/keypair.json)
+
+Deploy a Solana program
+
+- yarn run solana:build:program
+- solana deploy -v --keypair solana-wallet/keypair.json dist/solana/program/helloworld.so
+  On success, the CLI will print the programId of the deployed contract.
+
+RPC URL: https://api.devnet.solana.com Default Signer Path: solana-wallet/keypair.json Commitment: confirmed Program Id: progran ID

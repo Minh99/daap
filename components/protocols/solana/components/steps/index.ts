@@ -7,6 +7,7 @@ import Getter from '@figment-solana/components/steps/Getter';
 import Deploy from '@figment-solana/components/steps/Deploy';
 import Setter from '@figment-solana/components/steps/Setter';
 import Fund from '@figment-solana/components/steps/Fund';
+import ConnectPhanTom from '@figment-solana/components/steps/ConnectPhanTom';
 
 export {
   Keypair,
@@ -18,4 +19,5 @@ export {
   Greeter,
   Getter,
   Setter,
+  ConnectPhanTom,
 };

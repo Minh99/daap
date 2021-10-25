@@ -11,6 +11,7 @@ import {
   Greeter,
   Getter,
   Setter,
+  ConnectPhanTom,
 } from '@figment-solana/components/steps';
 import {getCurrentStepIdForCurrentChain, useGlobalState} from 'context';
 import SetupWizard from 'components/shared/SetupWizard';
@@ -18,22 +19,38 @@ import SetupWizard from 'components/shared/SetupWizard';
 const Solana: React.FC = () => {
   const {state} = useGlobalState();
   const stepId = getCurrentStepIdForCurrentChain(state);
-
+  // const stepId1 = PROTOCOL_STEPS_ID.CREATE_ACCOUNT;
   return (
     <div>
       <Nav />
-      {stepId === PROTOCOL_STEPS_ID.PROJECT_SETUP && (
+      {/* {stepId === PROTOCOL_STEPS_ID.PROJECT_SETUP && (
         <SetupWizard showText={true} />
-      )}
-      {stepId === PROTOCOL_STEPS_ID.CHAIN_CONNECTION && <Connect />}
-      {stepId === PROTOCOL_STEPS_ID.CREATE_ACCOUNT && <Keypair />}
+      )} */}
+      {stepId === PROTOCOL_STEPS_ID.CHAIN_CONNECTION && <ChainRow />}
+      {/* {stepId === PROTOCOL_STEPS_ID.CREATE_ACCOUNT && }
       {stepId === PROTOCOL_STEPS_ID.FUND_ACCOUNT && <Fund />}
       {stepId === PROTOCOL_STEPS_ID.GET_BALANCE && <Balance />}
       {stepId === PROTOCOL_STEPS_ID.TRANSFER_TOKEN && <Transfer />}
       {stepId === PROTOCOL_STEPS_ID.DEPLOY_CONTRACT && <Deploy />}
       {stepId === PROTOCOL_STEPS_ID.SOLANA_CREATE_GREETER && <Greeter />}
       {stepId === PROTOCOL_STEPS_ID.GET_CONTRACT_VALUE && <Getter />}
-      {stepId === PROTOCOL_STEPS_ID.SET_CONTRACT_VALUE && <Setter />}
+      {stepId === PROTOCOL_STEPS_ID.SET_CONTRACT_VALUE && <Setter />} */}
+    </div>
+  );
+};
+
+const ChainRow = () => {
+  return (
+    <div>
+      <Connect />
+      <Keypair />
+      <Fund />
+      <Balance />
+      <Transfer />
+      {/* <Deploy />  */}
+      {/* <Greeter />  */}
+      {/* <Getter />  */}
+      {/* <Setter /> */}
     </div>
   );
 };

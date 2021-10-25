@@ -12,6 +12,7 @@ import {
 } from 'context';
 import {PROTOCOL_INNER_STATES_ID, SOLANA_NETWORKS} from 'types';
 import {getSolanaInnerState} from '@figment-solana/lib';
+import {ConnectPhanTom} from '../steps';
 
 const {Option} = Select;
 
@@ -105,6 +106,7 @@ const Nav = () => {
 
   return (
     <StepMenuBar>
+      <ConnectPhanTom />
       <Popover content={AppState} placement="bottom">
         <Button type="ghost">Keychain</Button>
       </Popover>

@@ -17,7 +17,8 @@ export default async function balance(
     }
     res.status(200).json(balance);
   } catch (error) {
-    let errorMessage = error instanceof Error ? error.message : 'Unknown Error';
+    let errorMessage =
+      error instanceof Error ? error.message : 'Please. Try again!';
     res.status(500).json(errorMessage);
   }
 }

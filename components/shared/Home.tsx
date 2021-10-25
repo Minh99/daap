@@ -8,7 +8,6 @@ import {CHAINS_CONFIG} from 'lib/constants';
 import {colors, getChainColors} from 'utils/colors';
 import {trackEvent} from 'utils/tracking-utils';
 import ProtocolLogo from 'components/icons';
-
 const PROTOCOL_BOX_LENGTH = 100;
 const PROTOCOL_ICON_LENGTH = 30;
 
